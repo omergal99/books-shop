@@ -27,13 +27,13 @@ const BookList = () => {
   const [isLoading, toggleIsLoading] = useState(false);
 
   useEffect(() => {
-    // const abortController = new AbortController();
+    const abortController = new AbortController();
     (async () => {
       toggleIsLoading(true);
       const url = `${serverUrl}/books`;
       fetch(url, {
         method: "GET",
-        // signal: abortController.signal
+        signal: abortController.signal
       })
         .then((response) => response.json())
         .then((result) => {
@@ -51,9 +51,9 @@ const BookList = () => {
           toggleIsLoading(false);
         });
     })();
-    // return () => {
-    //   abortController.abort();
-    // };
+    return () => {
+      abortController.abort();
+    };
   }, [addLog]);
 
   if (error) {
