@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "name": "books-shop-server",
+  "version": "1.0.0",
+  "description": "https://codesandbox.io/s/books-server-forked-ep8d8z",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --experimental-json-modules --es-module-specifier-resolution=node src/index.js localhost 8080"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.16.4",
+    "nodemon": "2.0.19"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
+}

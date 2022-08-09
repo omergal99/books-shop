@@ -1,0 +1,57 @@
+{
+  "title": "books-shop",
+  "name": "books-shop-frontend",
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "description": "https://codesandbox.io/s/books-frontend-forked-30xt8x",
+  "version": "0.1.5",
+  "private": true,
+  "author": {
+    "name": "Omer Gal",
+    "email": "omergal9999a@gmail.com",
+    "url": "https://omergal99.github.io/cv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omergal99/books-shop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omergal99/books-shop/issues"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@emotion/react": "11.10.0",
+    "@emotion/styled": "11.6.0",
+    "@material-ui/styles": "4.11.4",
+    "@mui/icons-material": "latest",
+    "@mui/material": "5.4.1",
+    "@mui/styles": "5.4.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "5.3.0"
+  },
+  "keywords": [
+    "react",
+    "react hooks",
+    "how to use useEffect",
+    "useEffect with AbortController"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

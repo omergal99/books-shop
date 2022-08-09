@@ -1,0 +1,20 @@
+{
+  "title": "MiniDrawer Material Demo",
+  "name": "books-frontend",
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "description": "https://github.com/mui/material-ui/blob/v5.4.1/docs/src/MiniDrawer.js",
+  "dependencies": {
+    "@emotion/react": "11.10.0",
+    "@emotion/styled": "11.6.0",
+    "@material-ui/styles": "4.11.4",
+    "@mui/icons-material": "latest",
+    "@mui/material": "5.4.1",
+    "@mui/styles": "5.4.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "5.3.0"
+  },
+  "keywords": []
+}
