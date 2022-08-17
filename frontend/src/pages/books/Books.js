@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { serverUrl } from "../../services/httpService";
 import booksStyles from "./booksStyles";
 import LogsContext from "../../context/LogsContext";
+import HttpContext from "../../context/HttpContext";
 
 export default function Books() {
   return (
@@ -17,10 +17,12 @@ export default function Books() {
   );
 }
 
+
 const BookList = () => {
   const classes = booksStyles({ defaultBackgroundColor: "#654085" });
 
   const { addLog } = useContext(LogsContext);
+  const { serverUrl } = useContext(HttpContext);
 
   const [books, setBooks] = useState([]);
   const [error, setError] = useState("");
@@ -28,29 +30,32 @@ const BookList = () => {
 
   useEffect(() => {
     const abortController = new AbortController();
+
     (async () => {
       toggleIsLoading(true);
+      
       const url = `${serverUrl}/books`;
-      fetch(url, {
+      const options = {
         method: "GET",
         signal: abortController.signal
-      })
+      }
+      fetch(url, options)
         .then((response) => response.json())
-        .then((result) => {
-          setBooks(result);
+        .then((data) => {
+          setBooks(data);
           const successMessage = `GET books: Success to get books`;
           addLog({ message: successMessage, success: true });
-          toggleIsLoading(false);
         })
         .catch((err) => {
-          const errorMessage = `GET books: ${
-            err?.message || "Error to get books"
-          }`;
+          const errorMessage = `GET books: ${err?.message || "Error to get books"
+            }`;
           setError(errorMessage);
           addLog({ message: errorMessage, success: false });
+        }).finally(() => {
           toggleIsLoading(false);
-        });
+        })
     })();
+
     return () => {
       abortController.abort();
     };

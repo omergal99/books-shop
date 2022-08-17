@@ -5,6 +5,7 @@ import AppRouter from "./AppRouter";
 import AppLogs from "./AppLogs";
 import { BrowserRouter as Router } from "react-router-dom";
 import { LogsProvider } from "../context/LogsContext";
+import { HttpProvider } from "../context/HttpContext";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme();
@@ -14,11 +15,13 @@ export const App = () => {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <LogsProvider>
-          <Router>
-            <MiniDrawer logsComponent={AppLogs}>
-              <AppRouter />
-            </MiniDrawer>
-          </Router>
+          <HttpProvider>
+            <Router>
+              <MiniDrawer logsComponent={AppLogs}>
+                <AppRouter />
+              </MiniDrawer>
+            </Router>
+          </HttpProvider>
         </LogsProvider>
       </ThemeProvider>
     </StyledEngineProvider>
