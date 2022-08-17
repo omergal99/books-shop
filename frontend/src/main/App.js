@@ -3,7 +3,7 @@ import { StyledEngineProvider } from "@mui/material/styles";
 import MiniDrawer from "./MiniDrawer";
 import AppRouter from "./AppRouter";
 import AppLogs from "./AppLogs";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { LogsProvider } from "../context/LogsContext";
 import { HttpProvider } from "../context/HttpContext";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -16,11 +16,11 @@ export const App = () => {
       <ThemeProvider theme={theme}>
         <LogsProvider>
           <HttpProvider>
-            <Router>
+            <BrowserRouter >
               <MiniDrawer logsComponent={AppLogs}>
                 <AppRouter />
               </MiniDrawer>
-            </Router>
+            </BrowserRouter >
           </HttpProvider>
         </LogsProvider>
       </ThemeProvider>

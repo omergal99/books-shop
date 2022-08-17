@@ -1,25 +1,26 @@
 import { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import booksStyles from "./booksStyles";
 import LogsContext from "../../context/LogsContext";
 import HttpContext from "../../context/HttpContext";
+import BookPreview from "./BookPreview";
 
-export default function Books() {
+const Books = () => {
   return (
     <div>
-      <h2>Books</h2>
-      <p>
-        Fetching books from server, using <code>new AbortController()</code>
-      </p>
-      <p>for cases the request is cancelled and component lost data.</p>
       <BookList />
     </div>
   );
 }
 
+export default Books;
+
 
 const BookList = () => {
   const classes = booksStyles({ defaultBackgroundColor: "#654085" });
+
+  const params = useParams();
+  const { bookId } = params;
 
   const { addLog } = useContext(LogsContext);
   const { serverUrl } = useContext(HttpContext);
@@ -33,7 +34,7 @@ const BookList = () => {
 
     (async () => {
       toggleIsLoading(true);
-      
+
       const url = `${serverUrl}/books`;
       const options = {
         method: "GET",
@@ -43,12 +44,11 @@ const BookList = () => {
         .then((response) => response.json())
         .then((data) => {
           setBooks(data);
-          const successMessage = `GET books: Success to get books`;
+          const successMessage = `Success to get books`;
           addLog({ message: successMessage, success: true });
         })
         .catch((err) => {
-          const errorMessage = `GET books: ${err?.message || "Error to get books"
-            }`;
+          const errorMessage = `Error to get books ${err?.message ? ` - ${err?.message}` : ''}`;
           setError(errorMessage);
           addLog({ message: errorMessage, success: false });
         }).finally(() => {
@@ -61,29 +61,43 @@ const BookList = () => {
     };
   }, [addLog]);
 
-  if (error) {
-    return <div style={{ color: "red" }}>{error}</div>;
+  if (bookId) {
+    return <BookPreview />;
   }
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-  if (!books?.length) {
-    return <div>No books.</div>;
-  }
-  return (
-    <div className="app-grid">
-      {books.map((book, idx) => {
-        return (
-          <Link key={idx} to={`/books/${book.id}`}>
-            <div
-              className={classes.book}
-              style={{ backgroundColor: book.color }}
-            >
-              {book.name}
-            </div>
-          </Link>
-        );
-      })}
-    </div>
-  );
+
+  return <div>
+    <h2>Books</h2>
+    <p>
+      Fetching books from server, using <code>new AbortController()</code>
+    </p>
+    <p>for cases the request is cancelled and component lost data.</p>
+    {(() => {
+      if (error) {
+        return <div style={{ color: "red" }}>{error}</div>;
+      }
+      if (isLoading) {
+        return <div>Loading...</div>;
+      }
+      if (!books?.length) {
+        return <div>No books.</div>;
+      }
+      return (
+        <div className="app-grid">
+          {books.map((book, idx) => {
+            return (
+              <Link key={idx} to={`/books/${book.id}`}>
+                <div
+                  className={classes.book}
+                  style={{ backgroundColor: book.color }}
+                >
+                  {book.name}
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      );
+    })()}
+  </div>
+
 };
