@@ -59,7 +59,7 @@ const BookList = () => {
     return () => {
       abortController.abort();
     };
-  }, [addLog]);
+  }, [addLog, serverUrl]);
 
   if (bookId) {
     return <BookPreview />;

@@ -45,7 +45,7 @@ export default function BookPreview() {
     return () => {
       abortController.abort();
     };
-  }, [addLog]);
+  }, [addLog, serverUrl]);
 
   return (
     <div>
