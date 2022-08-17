@@ -32,7 +32,7 @@ const miniDrawerStyles = makeStyles((theme) => {
     },
     childrenContent: {
       overflow: "auto",
-      padding: theme.spacing(2, 1, 2, 3)
+      padding: theme.spacing(2, 2, 2, 3)
     },
     logs: {
       height: `${100 - contentHeightPercent}%`,
