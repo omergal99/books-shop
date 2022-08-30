@@ -16,7 +16,8 @@ https://codesandbox.io/s/books-server-forked-ni6773
 ## how to use React 'useEffect' with AbortController
 
 
-``` 
+
+```js
 useEffect(() => {
   const abortController = new AbortController();
 
