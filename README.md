@@ -16,6 +16,35 @@ https://codesandbox.io/s/books-server-forked-ni6773
 ## how to use React 'useEffect' with AbortController
 
 
+``` 
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    (async () => {
+      const url = '...';
+      const options = {
+        method: "GET",
+        signal: abortController.signal
+      }
+      fetch(url, options)
+        .then((response) => response.json())
+        .then((data) => {
+          ...
+        })
+        .catch((err) => {
+          ...
+        }).finally(() => {
+          ...
+        })
+    })();
+
+    return () => {
+      abortController.abort();
+    };
+  }, []);
+```
+
+
 the focus for react warning:
 Warning: Can't perform a React state update on an unmounted component.
 This is a no-op, but it indicates a memory leak in your application.
