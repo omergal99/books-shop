@@ -17,31 +17,31 @@ https://codesandbox.io/s/books-server-forked-ni6773
 
 
 ``` 
-  useEffect(() => {
-    const abortController = new AbortController();
+useEffect(() => {
+  const abortController = new AbortController();
 
-    (async () => {
-      const url = '...';
-      const options = {
-        method: "GET",
-        signal: abortController.signal
-      }
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-          ...
-        })
-        .catch((err) => {
-          ...
-        }).finally(() => {
-          ...
-        })
-    })();
+  (async () => {
+    const url = '...';
+    const options = {
+      method: "GET",
+      signal: abortController.signal
+    }
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        ...
+      })
+      .catch((err) => {
+        ...
+      }).finally(() => {
+        ...
+      })
+  })();
 
-    return () => {
-      abortController.abort();
-    };
-  }, []);
+  return () => {
+    abortController.abort();
+  };
+}, []);
 ```
 
 
