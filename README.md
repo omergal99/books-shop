@@ -34,7 +34,8 @@ useEffect(() => {
       })
       .catch((err) => {
         ...
-      }).finally(() => {
+      })
+      .finally(() => {
         ...
       })
   })();
