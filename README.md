@@ -1,6 +1,5 @@
 <h3 align="center">Books-shop</h3>
-[![React][React.js]][React-url]
-* [![React][React.js]][React-url]
+
 
 
 codesandbox frontend:
@@ -104,9 +103,4 @@ that's all :)
 
 
 meme for dancing after ring fall down - like send data after user move to other page.
-https://user-images.githubusercontent.com/45643113/187793094-a99de5b4-c2d6-4862-8527-6afa6b29cbcc.mp4
-
-
-
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-
+<video src="https://user-images.githubusercontent.com/45643113/187793094-a99de5b4-c2d6-4862-8527-6afa6b29cbcc.mp4" />
