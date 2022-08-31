@@ -1,9 +1,10 @@
-# Books-shop
+<h3 align="center">Books-shop</h3>
+[![React][React.js]][React-url]
 
 codesandbox frontend:
 https://codesandbox.io/s/books-frontend-forked-ceczc4
 
-codesandbox backend:
+codesandbox backend: (copy server link to frontend Home)
 https://codesandbox.io/s/books-server-forked-ni6773
 
 
@@ -79,14 +80,28 @@ https://medium.com/doctolib/react-stop-checking-if-your-component-is-mounted-3bb
 can be better solution: (this answer have memory leaks)
 https://stackoverflow.com/a/60907638/10869929
 
-good solution:
+### good solution:
 https://stackoverflow.com/a/54964237/10869929
 
 
+-
 
-to run locally
+### to run locally
 
-1. in both backend and frontend run "npm i"
-2. in both backend and frontend run "npm start"
+1. in both backend and frontend run ```sh
+  npm i
+  ```
+2. in both backend and frontend run ```sh
+  npm start
+  ```
 
 that's all :)
+
+
+
+
+
+
+https://user-images.githubusercontent.com/45643113/187793094-a99de5b4-c2d6-4862-8527-6afa6b29cbcc.mp4
+
+
