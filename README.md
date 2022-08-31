@@ -18,7 +18,7 @@ https://codesandbox.io/s/books-server-forked-ni6773
 
 
 
-```js
+```react.js
 useEffect(() => {
   const abortController = new AbortController();
 
@@ -56,7 +56,7 @@ method.
 
 and save us from memory leaks
 
-
+<p></p>
 
 In this little app, we can toggle between home page to books page.
 
@@ -66,7 +66,7 @@ If we will toggle fast we will see an aborted request in logs
 
 and that is how we can save unhandle and not used recevied data, in case it will not aborted.
 
-
+<p></p>
 
 relevant links:
 
@@ -84,24 +84,24 @@ https://stackoverflow.com/a/60907638/10869929
 https://stackoverflow.com/a/54964237/10869929
 
 
--
+<p></p>
 
 ### to run locally
 
-1. in both backend and frontend run ```sh
-  npm i
-  ```
-2. in both backend and frontend run ```sh
-  npm start
-  ```
-
+1. in both backend and frontend run 
+```sh
+npm i
+```
+2. in both backend and frontend run 
+```sh
+npm start
+```
+<p></p>
 that's all :)
 
 
 
-
-
-
+meme for dancing after ring fall down - like send data after user move to other page.
 https://user-images.githubusercontent.com/45643113/187793094-a99de5b4-c2d6-4862-8527-6afa6b29cbcc.mp4
 
 
