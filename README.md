@@ -103,5 +103,5 @@ that's all :)
 
 <h2></h2>
 
-<span>meme for dancing after ring fall down - like send data after user move to other page.</span>
+<span>There's no reason to keep running when the hoop doesn't want you - like look for data after user move to other page.</span>
 <video src="https://user-images.githubusercontent.com/45643113/187793094-a99de5b4-c2d6-4862-8527-6afa6b29cbcc.mp4" />
