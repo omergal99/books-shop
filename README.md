@@ -5,7 +5,7 @@
 codesandbox frontend:
 https://codesandbox.io/s/books-frontend-forked-ceczc4
 
-codesandbox backend: (copy server link to frontend Home)
+codesandbox backend: (*fork* and *copy server link* to frontend Home)
 https://codesandbox.io/s/books-server-forked-ni6773
 
 
